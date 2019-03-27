@@ -8,12 +8,14 @@ IEEE Transactions on Signal Processing, 62(3), pp. 531–544. doi: 10.1109/TSP.2
 
 original MATLAB code: https://www.mathworks.com/matlabcentral/fileexchange/44765-variational-mode-decomposition  
 
+
+```python
 #%% Simple example  
 import numpy as np  
 import matplotlib.pyplot as plt  
 from vmdpy import VMD  
 
-#. Time Domain 0 to T 
+#. Time Domain 0 to T  
 T = 1000  
 fs = 1/T  
 t = np.arange(1,T+1)/T  
@@ -42,3 +44,4 @@ tol = 1e-7
 
 #. Run actual VMD code  
 u, u_hat, omega = VMD(f, alpha, tau, K, DC, init, tol)  
+```
