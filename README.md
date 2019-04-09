@@ -17,15 +17,15 @@ OR
 2) pip install vmdpy
 
 ## Citation and Contact
-If you find this package useful, we kindly ask you to cite it in your work. 
-Vinicius Carvalho (2019-), Variational Mode Decomposition in Python
+If you find this package useful, we kindly ask you to cite it in your work.   
+Vinicius Carvalho (2019-), Variational Mode Decomposition in Python  
 
-A paper will soon be submitted and linked here.
+A paper will soon be submitted and linked here.  
 
-contact: vrcarva@ufmg.br
-Vinícius Rezende Carvalho
-Programa de Pós-Graduação em Engenharia Elétrica – Universidade Federal de Minas Gerais, Belo Horizonte, Brasil
-Núcleo de Neurociências - Universidade Federal de Minas Gerais
+contact: vrcarva@ufmg.br  
+Vinícius Rezende Carvalho  
+Programa de Pós-Graduação em Engenharia Elétrica – Universidade Federal de Minas Gerais, Belo Horizonte, Brasil  
+Núcleo de Neurociências - Universidade Federal de Minas Gerais  
 
 
 ## Example script
