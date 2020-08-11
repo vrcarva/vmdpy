@@ -1,30 +1,30 @@
-# Variational mode decomposition Python Package
+# vmdpy: Variational mode decomposition in Python
 
-Function for calculating Variational Mode Decomposition (Dragomiretskiy and Zosso, 2014) of a signal  
-Original VMD paper:  
-Dragomiretskiy, K. and Zosso, D. (2014) ‘Variational Mode Decomposition’, 
-IEEE Transactions on Signal Processing, 62(3), pp. 531–544. doi: 10.1109/TSP.2013.2288675.
+Function for decomposing a signal according to the Variational Mode Decomposition ([Dragomiretskiy and Zosso, 2014](https://doi.org/10.1109/TSP.2013.2288675)) method.  
 
-original MATLAB code: https://www.mathworks.com/matlabcentral/fileexchange/44765-variational-mode-decomposition  
+This package is a Python translation of the original [VMD MATLAB toolbox](https://www.mathworks.com/matlabcentral/fileexchange/44765-variational-mode-decomposition)  
 
 
 ## Installation 
 
-1) Dowload the project from https://github.com/vrcarva/vmdpy, then run "python setup.py install" from the project folder
+1) pip install vmdpy 
 
 OR
 
-2) pip install vmdpy
+2) Dowload the project from https://github.com/vrcarva/vmdpy, then run "python setup.py install" from the project folder
 
 ## Citation and Contact
-Preprint available at: https://doi.org/10.1101/691055
+Paper available at: https://doi.org/10.1016/j.bspc.2020.102073
 
-If you find this package useful, we kindly ask you to cite it in your work.   
-Evaluating three different adaptive decomposition methods for EEG signal seizure detection and classification
-Vinícius Rezende Carvalho, Márcio F.D. Moraes, Antônio Pádua Braga, Eduardo M.A.M. Mendes
-bioRxiv 691055; doi: https://doi.org/10.1101/691055
-
-The final paper will soon be submitted and linked here.  
+If you find this package useful, we kindly ask you to cite it in your work:   
+Vinícius R. Carvalho, Márcio F.D. Moraes, Antônio P. Braga, Eduardo M.A.M. Mendes,
+Evaluating five different adaptive decomposition methods for EEG signal seizure detection and classification,
+Biomedical Signal Processing and Control,
+Volume 62,
+2020,
+102073,
+ISSN 1746-8094,
+https://doi.org/10.1016/j.bspc.2020.102073.  
 
 If you developed a new funcionality or fixed anything in the code, just provide me the corresponding files and which credit should I include in this readme file. 
 
@@ -36,7 +36,7 @@ Núcleo de Neurociências - Universidade Federal de Minas Gerais
 
 ## Example script
 ```python
-#%% Simple example  
+#%% Simple example: generate signal with 3 components + noise  
 import numpy as np  
 import matplotlib.pyplot as plt  
 from vmdpy import VMD  
@@ -68,6 +68,20 @@ init = 1           # initialize omegas uniformly
 tol = 1e-7  
 
 
-#. Run actual VMD code  
+#. Run VMD 
 u, u_hat, omega = VMD(f, alpha, tau, K, DC, init, tol)  
+
+#. Visualize decomposed modes
+plt.figure()
+plt.subplot(2,1,1)
+plt.plot(f)
+plt.title('Original signal')
+plt.xlabel('time (s)')
+plt.subplot(2,1,2)
+plt.plot(u.T)
+plt.title('Decomposed modes')
+plt.xlabel('time (s)')
+plt.legend(['Mode %d'%m_i for m_i in range(u.shape[0])])
+plt.tight_layout()
+
 ```
