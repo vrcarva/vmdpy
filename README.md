@@ -1,17 +1,34 @@
+NOTE: ``vmdpy`` is officially distributed with, and maintained in, [``sktime``](https://github.com/sktime/sktime/), since August 2023.
+
+Please ask questions or open issues or PR on the [``sktime`` repository](https://github.com/sktime/sktime/).
+
 # vmdpy: Variational mode decomposition in Python
 
-Function for decomposing a signal according to the Variational Mode Decomposition ([Dragomiretskiy and Zosso, 2014](https://doi.org/10.1109/TSP.2013.2288675)) method.  
+Function for decomposing a signal according to the Variational Mode Decomposition
+([Dragomiretskiy and Zosso, 2014](https://doi.org/10.1109/TSP.2013.2288675)) method.  
 
-This package is a Python translation of the original [VMD MATLAB toolbox](https://www.mathworks.com/matlabcentral/fileexchange/44765-variational-mode-decomposition)  
+This package is a Python translation of
+the original [VMD MATLAB toolbox](https://www.mathworks.com/matlabcentral/fileexchange/44765-variational-mode-decomposition)  
 
 
 ## Installation 
 
-1) pip install vmdpy 
+`vmdpy` is distributed with `sktime`.
 
-OR
+Install ``sktime`` via ``pip`` or ``conda``, i.e.,
 
-2) Dowload the project from https://github.com/vrcarva/vmdpy, then run "python setup.py install" from the project folder
+```
+pip install sktime
+```
+
+or
+
+```
+conda install sktime
+```
+
+For further details, see the [sktime installation guide](https://www.sktime.net/en/stable/installation.html)
+
 
 ## Citation and Contact
 Paper available at: https://doi.org/10.1016/j.bspc.2020.102073
@@ -26,12 +43,14 @@ Volume 62,
 ISSN 1746-8094,
 https://doi.org/10.1016/j.bspc.2020.102073.  
 
-If you developed a new funcionality or fixed anything in the code, just provide me the corresponding files and which credit should I include in this readme file. 
+For contributing new functionality or fixing anything in the package,
+kindly make a PR to the ``sktime`` repository (``libs.vmdpy`` module).
 
-For suggestions, questions, comments, etc: vrcarva@ufmg.br  
-Vinícius Rezende Carvalho  
-Programa de Pós-Graduação em Engenharia Elétrica – Universidade Federal de Minas Gerais, Belo Horizonte, Brasil  
-Núcleo de Neurociências - Universidade Federal de Minas Gerais  
+For suggestions, questions, comments:
+
+* [sktime issue tracker](https://github.com/sktime/sktime/issues) or [discussion forum](https://github.com/sktime/sktime/discussions),
+  please ping `vrcarva`
+* [sktime discord](https://discord.com/invite/54ACzaFsn7)
 
 
 ## Example script
@@ -39,7 +58,7 @@ Núcleo de Neurociências - Universidade Federal de Minas Gerais
 #%% Simple example: generate signal with 3 components + noise  
 import numpy as np  
 import matplotlib.pyplot as plt  
-from vmdpy import VMD  
+from sktime.libs.vmdpy import VMD  
 
 #. Time Domain 0 to T  
 T = 1000  
@@ -83,5 +102,4 @@ plt.title('Decomposed modes')
 plt.xlabel('time (s)')
 plt.legend(['Mode %d'%m_i for m_i in range(u.shape[0])])
 plt.tight_layout()
-
 ```
